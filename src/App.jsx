@@ -5,20 +5,21 @@ import './App.css';
 
 function App() {
   const [themeConfig, setThemeConfig] = useState({
-    brandName: 'LUXURY GOLD',
+    brandName: 'QUI PHUC',
     brandLogo: '',
-    primaryColor: '#D4AF37',
-    secondaryColor: '#1a1a1a',
-    textColor: '#000000',
+    primaryColor: '#004a99',
+    secondaryColor: '#e31837',
+    textColor: '#333333',
     backgroundColor: '#ffffff',
-    industry: 'Fashion',
-    option: 'Web Branding', // 'Web Branding' or 'Web Ecommerce'
+    industry: 'Home',
+    option: 'Web Ecommerce', // 'Web Branding' or 'Web Ecommerce'
     showSections: {
       slider: true,
-      banner: true,
+      category: true,
+      lookbook: true,
       collection: true,
-      policy: true,
-      blog: false,
+      trust: true,
+      news: true,
       footer: true
     }
   });

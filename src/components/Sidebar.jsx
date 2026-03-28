@@ -6,6 +6,16 @@ const Sidebar = ({ config, onUpdate, onToggle }) => {
     onUpdate({ [name]: value });
   };
 
+  const sectionsMap = {
+    slider: 'Hero Slider',
+    category: 'Danh mục (Icons)',
+    lookbook: 'Góc bếp (Lookbook)',
+    collection: 'Sản phẩm mới',
+    trust: 'Vùng tin cậy (Trust)',
+    news: 'Tin tức & Media',
+    footer: 'Chân trang'
+  };
+
   return (
     <div className="sidebar">
       <h1>Haravan Demo Builder</h1>
@@ -36,10 +46,10 @@ const Sidebar = ({ config, onUpdate, onToggle }) => {
       <div className="form-group">
         <label>Lĩnh vực</label>
         <select name="industry" value={config.industry} onChange={handleChange}>
+          <option value="Home">Nội thất & Gia dụng</option>
           <option value="Fashion">Thời trang & Phụ kiện</option>
           <option value="Beauty">Mỹ phẩm & Làm đẹp</option>
           <option value="Tech">Công nghệ & Điện tử</option>
-          <option value="Home">Đồ gia dụng & Nội thất</option>
         </select>
       </div>
 
@@ -78,13 +88,13 @@ const Sidebar = ({ config, onUpdate, onToggle }) => {
       <div className="section-toggles">
         <label style={{ fontSize: '13px', color: '#94a3b8', marginBottom: '12px', display: 'block' }}>Hệ thống Sections (Library)</label>
         
-        {Object.keys(config.showSections).map(section => (
+        {Object.keys(sectionsMap).map(section => (
           <div 
             key={section} 
             className={`toggle-item ${config.showSections[section] ? 'active' : ''}`}
             onClick={() => onToggle(section)}
           >
-            <span style={{ textTransform: 'capitalize' }}>{section}</span>
+            <span style={{ fontSize: '12px' }}>{sectionsMap[section]}</span>
             <input type="checkbox" checked={config.showSections[section]} readOnly />
           </div>
         ))}
